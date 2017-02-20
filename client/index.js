@@ -3,9 +3,9 @@ import { render } from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import { configureStore } from './store/configureStore';
 import { Provider } from 'react-redux';
-import { AppConnected } from './containers/App';
 import { DevTools } from './containers/DevTools';
-import 'todomvc-app-css/index.css';
+import { App } from './containers/App';
+import './index.scss';
 
 const store = configureStore();
 
@@ -23,10 +23,11 @@ const renderWrapper = (Component) => {
     );
 };
 
-renderWrapper(AppConnected);
+renderWrapper(App);
+
 
 if (module.hot) {
     module.hot.accept('./containers/App', () => {
-        renderWrapper(AppConnected)
+        renderWrapper(App)
     });
 }

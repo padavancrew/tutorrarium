@@ -1,31 +1,22 @@
-import React, { PropTypes } from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
+import React, { Component } from 'react';
+import { Router, Route, Redirect, browserHistory } from 'react-router';
 import { Header } from '../components/Header';
-import { MainSection } from '../components/MainSection';
-import * as TodoActions from '../actions';
+import { Footer } from '../components/Footer';
+import { Home } from '../components/Home';
+import { Help } from '../components/Help';
 
-const App = ({todos, actions}) => (
-    <div className="todoapp">
-        <Header addTodo={actions.addTodo}/>
-        <MainSection todos={todos} actions={actions}/>
-    </div>
-);
-
-App.propTypes = {
-    todos: PropTypes.array.isRequired,
-    actions: PropTypes.object.isRequired
-};
-
-const mapStateToProps = state => ({
-    todos: state.todos
-});
-
-const mapDispatchToProps = dispatch => ({
-    actions: bindActionCreators(TodoActions, dispatch)
-});
-
-export const AppConnected = connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(App);
+export class App extends Component {
+    render() {
+        return (
+            <div>
+                <Header />
+                <Router history={browserHistory}>
+                    <Route path="home" component={Home}/>
+                    <Route path="help" component={Help}/>
+                    <Redirect from="*" to="home" />
+                </Router>
+                <Footer />
+            </div>
+        )
+    }
+}
