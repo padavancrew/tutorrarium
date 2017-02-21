@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
-export class Footer extends Component {
+export class Help extends Component {
     render() {
         return (
             <div>
-                <h1>2_FOOTER_PLACEHOLDER</h1>
+                <h1>4_HELP_PLACEHOLDER</h1>
             </div>
         );
     }

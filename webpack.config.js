@@ -1,4 +1,4 @@
-const {resolve} = require('path');
+const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
@@ -10,22 +10,23 @@ module.exports = {
     ],
     output: {
         filename: 'bundle.js',
-        path: resolve(__dirname, 'dist'),
+        path: path.join(__dirname, 'dist'),
         publicPath: '/'
     },
-    context: resolve(__dirname, 'client'),
+    context: path.join(__dirname, 'client'),
     devtool: 'inline-source-map',
     devServer: {
         hot: true,
-        contentBase: resolve(__dirname, 'dist'),
-        publicPath: '/'
+        contentBase: path.join(__dirname, 'dist'),
+        publicPath: '/',
+        historyApiFallback: {index: '/'}
     },
     module: {
         rules: [
             {
                 test: /\.js$/,
                 use: [
-                    'babel-loader',
+                    'babel-loader'
                 ],
                 exclude: /node_modules/
             },
@@ -34,6 +35,15 @@ module.exports = {
                 use: [
                     'style-loader',
                     'css-loader',
+                    'postcss-loader'
+                ]
+            },
+            {
+                test: /\.scss$/,
+                use: [
+                    "style-loader",
+                    "css-loader",
+                    "sass-loader",
                     'postcss-loader'
                 ]
             }
