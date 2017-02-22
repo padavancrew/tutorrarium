@@ -5,6 +5,7 @@ export class Footer extends Component {
         return (
             <div>
                 <h1>2_FOOTER_PLACEHOLDER</h1>
+                <h1>2_FOOTER_PLACEHOLDER 222</h1>
             </div>
         );
     }
