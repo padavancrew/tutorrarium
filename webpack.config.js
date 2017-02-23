@@ -31,14 +31,6 @@ module.exports = {
                 exclude: /node_modules/
             },
             {
-                test: /\.css$/,
-                use: [
-                    'style-loader',
-                    'css-loader',
-                    'postcss-loader'
-                ]
-            },
-            {
                 test: /\.scss$/,
                 use: [
                     "style-loader",
@@ -46,6 +38,14 @@ module.exports = {
                     "sass-loader",
                     'postcss-loader'
                 ]
+            },
+            {
+                test: /\.jpg$/,
+                use: 'file-loader'
+            },
+            {
+                test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+                use: "file-loader"
             }
         ]
     },

@@ -5,7 +5,6 @@ export class Home extends Component {
     render() {
         return (
             <div className="home">
-                (beautiful background)
                 <div className="quick-start">
                     (quick start component)
                 </div>
@@ -13,7 +12,23 @@ export class Home extends Component {
                     (high rated component)
                 </div>
                 <div className="info">
-                    (info block)
+                    <div>
+                        <img src={require('../img/home-info-1.jpg')}/>
+                        <p>Need help?</p>
+                        <p>Go to Help Page to submit your task</p>
+                        <p>or use Quick Start menu!</p>
+                    </div>
+                    <div>
+                        <img src={require('../img/home-info-2.jpg')}/>
+                        <p>Want to help?</p>
+                        <p>Provide answers an solutions to existed tasks!</p>
+                    </div>
+                    <div>
+                        <img src={require('../img/home-info-3.jpg')}/>
+                        <p>Check for available tasks and solutions.</p>
+                        <p>Rate most interested tasks</p>
+                        <p>and most helpful users!</p>
+                    </div>
                 </div>
             </div>
         );
