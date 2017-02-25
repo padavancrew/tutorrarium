@@ -1,3 +1,10 @@
+@font-face {
+  font-family: Slabo;
+  src: url(./fonts/Slabo27px-Regular.ttf);
+}
+@import "../node_modules/font-awesome/scss/font-awesome";
+$fa-font-path: "node_modules/font-awesome/fonts";
+
 body {
   margin: 0;
 }
