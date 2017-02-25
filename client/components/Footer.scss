@@ -1,0 +1,45 @@
+.footer {
+  overflow: hidden;
+  width: 100%;
+  background: rgba(77, 0, 0, 1);
+  font-family: Slabo, sans-serif;
+  color: white;
+
+  img {
+    height: 75px;
+    width: 75px;
+  }
+
+  a {
+    color: inherit;
+  }
+}
+
+.logo-block {
+  float: left;
+  padding: 25px;
+  width: 15%;
+  text-align: center;
+  font-size: 30px;
+  line-height: 10px;
+}
+
+.social-block {
+  float: left;
+  width: 50%;
+  font-size: 16px;
+  i {
+    padding-left: 25px;
+    font-size: 30px;
+  }
+}
+
+.creators-block {
+  float: left;
+  width: 15%;
+}
+
+.contacts-block {
+  float: left;
+  width: 15%;
+}
