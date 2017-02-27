@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import './Footer.scss';
+import logoImg from '../img/logo.png';
 
 export class Footer extends Component {
     render() {
         return (
             <div className="footer">
                 <div className="logo-block">
-                    <img src={require('../img/logo.png')}/>
+                    <img src={logoImg}/>
                     <p>TUTORRARIUM</p>
                 </div>
                 <div className="social-block">
