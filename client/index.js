@@ -25,9 +25,8 @@ const renderWrapper = (Component) => {
 
 renderWrapper(App);
 
-
 if (module.hot) {
     module.hot.accept('./containers/App', () => {
-        renderWrapper(App)
+        renderWrapper(App);
     });
 }

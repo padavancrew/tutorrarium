@@ -1,27 +1,40 @@
 .home {
-  background-color: darkseagreen;
+  padding: 50px 0;
+  width: 100%;
+  background: url(../img/home-background.jpg);
+  background-size: cover;
 }
 
 .quick-start {
-  background-color: indianred;
-  margin-top: 50px;
-  margin-right: auto;
-  margin-left: auto;
+  background-color: indianred; /*temp*/
+  margin: 0 auto 50px auto;
   height: 200px;
-  width: 700px;
+  width: 50%;
 }
 
 .high-rated {
-  background-color: cornflowerblue;
-  margin-top: 50px;
-  margin-right: auto;
-  margin-left: auto;
+  background-color: cornflowerblue; /*temp*/
+  margin: 0 auto 50px auto;
   height: 400px;
-  width: 500px;
+  width: 30%;
 }
 
 .info {
-  background-color: yellow;
-  margin-top: 50px;
-  height: 200px;
+  overflow: hidden;
+  padding: 50px 0;
+  background: rgba(0, 0, 0, 0.6);
+  text-align: center;
+  font-family: Slabo, sans-serif;
+  font-size: 25px;
+  color: white;
+
+  img {
+    height: 250px;
+    width: 250px;
+  }
+}
+
+.info-block {
+  width: 33.3%;
+  float: left;
 }
