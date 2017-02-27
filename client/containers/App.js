@@ -17,6 +17,6 @@ export class App extends Component {
                 </Router>
                 <Footer />
             </div>
-        )
+        );
     }
 }
