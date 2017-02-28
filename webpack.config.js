@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-module.exports = function (env) {
+module.exports = (env) => {
     const config = {
         output: {
             filename: '[name]-[hash].js',
