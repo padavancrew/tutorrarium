@@ -3,7 +3,8 @@ import Express from 'express';
 import fallback from 'express-history-api-fallback';
 
 const app = new Express();
-const port = 3000;
+const port = process.env.PORT || 3000;
+
 const root = path.resolve(__dirname, '..', 'dist');
 
 app.get('/api/', (req, res) => {
