@@ -5,6 +5,8 @@ import { Footer } from '../components/Footer';
 import { Home } from '../components/Home';
 import { Help } from '../components/Help';
 
+import problemsData from './problems_database'; //temp
+
 export class App extends Component {
     render() {
         return (
@@ -12,8 +14,8 @@ export class App extends Component {
                 <Header />
                 <Router history={browserHistory}>
                     <Route path="home" component={Home}/>
-                    <Route path="help" component={Help}/>
-                    <Redirect from="*" to="home" />
+                    <Route path="help" component={() => (<Help problems={problemsData}/>)}/>
+                    <Redirect from="*" to="home"/>
                 </Router>
                 <Footer />
             </div>
