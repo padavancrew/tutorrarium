@@ -1,0 +1,40 @@
+.header {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  font-family: Slabo, sans-serif;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 10px 40px;
+
+  &-logo {
+    height: 75px;
+    width: 75px;
+  }
+
+  &-title {
+    padding: 20px;
+  }
+
+  .navigation {
+    list-style: none;
+    margin: 0;
+    background: grey;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+  }
+
+  .navigation a {
+    text-decoration: none;
+    display: block;
+    padding: 1em;
+    color: white;
+  }
+
+  .navigation a:hover {
+    background: darken(grey, 10%);
+  }
+}
