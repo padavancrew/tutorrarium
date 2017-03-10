@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './Home.scss';
-import homeInfo1 from '../img/home-info-1.jpg';
-import homeInfo2 from '../img/home-info-2.jpg';
-import homeInfo3 from '../img/home-info-3.jpg';
+import homeInfo1 from '../../img/home-info-1.jpg';
+import homeInfo2 from '../../img/home-info-2.jpg';
+import homeInfo3 from '../../img/home-info-3.jpg';
 
 export class Home extends Component {
     render() {
