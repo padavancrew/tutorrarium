@@ -1,14 +1,13 @@
 import path from 'path';
 import Express from 'express';
 import fallback from 'express-history-api-fallback';
+import problemsRouter from './problems/problems';
 
 const app = new Express();
 const port = process.env.PORT || 3000;
 const root = path.resolve(__dirname, '..', 'dist');
 
-app.get('/api/', (req, res) => {
-    res.send('Hello World!')
-});
+app.use('/api/problems', problemsRouter);
 
 app.use(Express.static(root, {maxAge: '2d'}));
 app.use(fallback('index.html', {root}));

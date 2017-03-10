@@ -1,8 +1,13 @@
-import React, { Component } from 'react';
-import { Problem } from './Help/Problem';
+import React, { Component, PropTypes} from 'react';
+import {connect} from 'react-redux';
+import { Problem } from './../Problem/Problem';
 import './Help.scss';
 
-export class Help extends Component {
+class Help extends Component {
+    componentDidMound() {
+        //fetch
+    }
+
     render() {
         const problems = this.props.problems.map((item) => {
             return (
@@ -27,5 +32,11 @@ export class Help extends Component {
 }
 
 Help.propTypes = {
-    problems: React.PropTypes.array
+    problems: PropTypes.array.isRequired
 };
+
+const mapStateToProps = ({problems}) => {
+    return {problems};
+};
+
+export default connect(mapStateToProps)(Help);

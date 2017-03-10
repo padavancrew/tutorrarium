@@ -1,0 +1,101 @@
+.problem {
+  overflow: hidden;
+  margin-bottom: 100px;
+  width: 625px;
+  font-family: Slabo, sans-serif;
+}
+
+.rating {
+  float: left;
+  padding: 5px 0 0 5px;
+  border-radius: 5px;
+  height: 35px;
+  width: 50px;
+  background-color: white;
+  font-size: 25px;
+  color: red;
+}
+
+.user-name {
+  float: left;
+  margin-top: 6px;
+  padding: 5px 0 0 5px;
+  height: 25px;
+  width: 400px;
+  background: rgba(200, 200, 200, 1);
+  font-size: 16px;
+}
+
+.subject {
+  float: left;
+  margin-top: 3px;
+  padding: 5px 15px 5px 15px;
+  border-radius: 5px;
+  width: auto;
+  background: rgba(77, 0, 0, 1);
+  font-size: 20px;
+  color: white;
+
+  i {
+    margin-right: 5px;
+    font-size: 15px;
+  }
+}
+
+.description {
+  float: left;
+  clear: both;
+  margin-left: 10px;
+  padding: 10px 0 25px 10px;
+  border-radius: 15px;
+  width: 500px;
+  background-color: white;
+  font-size: 16px;
+}
+
+.is-answered {
+  float: left;
+  clear: both;
+  border-radius: 5px;
+  height: 40px;
+  width: 40px;
+  background-color: white;
+
+  i {
+    margin: 4px 0 0 7px;
+    font-size: 30px;
+  }
+
+  .answered {
+    color: green;
+  }
+
+  .not-answered {
+    color: orange;
+  }
+}
+
+.answers {
+  float: left;
+  margin-top: 5px;
+  padding: 5px 0 5px 0;
+  border-radius: 0 5px 5px 0;
+  width: 110px;
+  background: rgba(153, 255, 153, 1);
+  text-align: center;
+  font-size: 18px;
+}
+
+.view-button {
+  float: left;
+  margin-left: 310px;
+  padding: 7px 5px 5px 10px;
+  border-radius: 5px;
+  background: rgba(200, 0, 0, 1);
+  font-size: 25px;
+  color: white;
+
+  i{
+    margin-left: 10px;
+  }
+}
