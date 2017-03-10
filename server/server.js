@@ -1,7 +1,15 @@
 import path from 'path';
 import Express from 'express';
 import fallback from 'express-history-api-fallback';
+import mongoose from 'mongoose';
 import problemsRouter from './problems/problems';
+
+mongoose.connect('mongodb://root:padavancrew1@ds163699.mlab.com:63699/tutorrarium');
+const Schema = mongoose.Schema;
+const problemSchema = new Schema({
+    id: Number // TODO: add properties
+});
+const Problem = mongoose.model('User', problemSchema);
 
 const app = new Express();
 const port = process.env.PORT || 3000;

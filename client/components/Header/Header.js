@@ -5,7 +5,7 @@ export class Header extends Component {
     render() {
         return (
             <div className="header">
-                <img className="header-logo" src={require('../img/logo.png')}/>
+                <img className="header-logo" src={require('../../img/logo.png')}/>
                 <span className="header-title">TUTORRARIUM</span>
                 <ul className="navigation">
                     <li><a href="">Home</a></li>
