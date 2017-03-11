@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Router, Route, Redirect, browserHistory } from 'react-router';
-import { Header } from '../components/Header';
+import { Header } from '../components/Header/Header';
 import { Footer } from '../components/Footer/Footer';
 import { Home } from '../components/Home/Home';
 import Help from '../components/Help/Help';
