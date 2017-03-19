@@ -1,5 +1,6 @@
 import React, { Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
+import { NewProblem} from './../New Problem/NewProblem';
 import { Problem } from './../Problem/Problem';
 import './Help.scss';
 
@@ -20,9 +21,7 @@ class Help extends Component {
                 <div className="sort-field">
                     (sort, search)
                 </div>
-                <div className="add-new-button">
-                    (create new button)
-                </div>
+                <NewProblem />
                 <div className="problems">
                     {problems}
                 </div>
