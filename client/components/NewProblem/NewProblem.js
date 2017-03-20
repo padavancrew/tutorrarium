@@ -2,34 +2,36 @@ import React, { Component } from 'react';
 import './NewProblem.scss';
 
 export class NewProblem extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            subject: '',
-            description: ''
-        };
-        this.setSubject = this.setSubject.bind(this);
-        this.setDescription = this.setDescription.bind(this);
-        this.sendProblem = this.sendProblem.bind(this);
-    }
+    state = {
+        subject: '',
+        description: ''
+    };
 
-    setSubject(event) {
+    setSubject = (event) => {
         this.setState({subject: event.target.value});
-    }
+    };
 
-    setDescription(event) {
+    setDescription = (event) => {
         this.setState({description: event.target.value});
-    }
+    };
 
-    sendProblem() {
+    sendProblem = () => {
         alert('subject: ' + this.state.subject + ', description: ' + this.state.description); //temp
-    }
+        fetch('http://localhost:3000/api/newProblem', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(this.state)
+        });
+    };
 
     render() {
         return (
             <div className="new-problem">
                 <form>
                     <select onChange={this.setSubject}>
+                        <option selected disabled hidden>select a subject</option>
                         <option>placeholder1</option>
                         <option>placeholder2</option>
                         <option>placeholder3</option>
@@ -38,7 +40,9 @@ export class NewProblem extends Component {
                         <option>add new subject</option>
                     </select>
                     <input type="text" onChange={this.setDescription}/>
-                    <input type="button" value="Add" onClick={this.sendProblem}/>
+                    <div className="add-new-button" onClick={this.sendProblem}>
+                        <span>Add</span>
+                    </div>
                 </form>
             </div>
         );

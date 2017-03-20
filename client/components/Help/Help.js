@@ -1,6 +1,6 @@
 import React, { Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
-import { NewProblem} from './../New Problem/NewProblem';
+import { NewProblem} from '../NewProblem/NewProblem';
 import { Problem } from './../Problem/Problem';
 import './Help.scss';
 
