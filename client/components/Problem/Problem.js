@@ -1,4 +1,4 @@
-import React, { Component, PropTypes} from 'react';
+import React, { Component, PropTypes } from 'react';
 import './Problem.scss';
 
 export class Problem extends Component {

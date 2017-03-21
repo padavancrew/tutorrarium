@@ -56,7 +56,10 @@ module.exports = (env) => {
             hot: true,
             contentBase: path.join(__dirname, 'dist'),
             publicPath: '/',
-            historyApiFallback: {index: '/'}
+            historyApiFallback: {index: '/'},
+            proxy: {
+                "/api": "http://localhost:3000"
+            }
         };
         config.plugins.push(new webpack.HotModuleReplacementPlugin());
     } else {

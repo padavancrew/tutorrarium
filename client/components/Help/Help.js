@@ -1,6 +1,6 @@
-import React, { Component, PropTypes} from 'react';
-import {connect} from 'react-redux';
-import { NewProblem} from '../NewProblem/NewProblem';
+import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
+import { NewProblem } from '../NewProblem/NewProblem';
 import { Problem } from './../Problem/Problem';
 import './Help.scss';
 
@@ -34,8 +34,8 @@ Help.propTypes = {
     problems: PropTypes.array.isRequired
 };
 
-const mapStateToProps = ({problems}) => {
-    return {problems};
+const mapStateToProps = ({ problems }) => {
+    return { problems };
 };
 
 export default connect(mapStateToProps)(Help);

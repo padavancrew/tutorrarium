@@ -8,16 +8,19 @@ export class NewProblem extends Component {
     };
 
     setSubject = (event) => {
-        this.setState({subject: event.target.value});
+        this.setState({
+            subject: event.target.value
+        });
     };
 
     setDescription = (event) => {
-        this.setState({description: event.target.value});
+        this.setState({
+            description: event.target.value
+        });
     };
 
     sendProblem = () => {
-        alert('subject: ' + this.state.subject + ', description: ' + this.state.description); //temp
-        fetch('http://localhost:3000/api/newProblem', {
+        fetch('/api/problems', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -40,9 +43,7 @@ export class NewProblem extends Component {
                         <option>add new subject</option>
                     </select>
                     <input type="text" onChange={this.setDescription}/>
-                    <div className="add-new-button" onClick={this.sendProblem}>
-                        <span>Add</span>
-                    </div>
+                    <button type="button" onClick={this.sendProblem}>Add</button>
                 </form>
             </div>
         );
