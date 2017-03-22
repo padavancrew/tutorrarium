@@ -16,7 +16,6 @@ const port = process.env.PORT || 3000;
 const root = path.resolve(__dirname, '..', 'dist');
 
 app.use('/api/problems', problemsRouter);
-
 app.use(Express.static(root, {maxAge: '2d'}));
 app.use(fallback('index.html', {root}));
 
