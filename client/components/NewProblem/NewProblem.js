@@ -27,13 +27,22 @@ export class NewProblem extends Component {
             },
             body: JSON.stringify(this.state)
         });
+
+        const newProblem = document.getElementsByClassName('new-problem')[0];
+        const problems = document.getElementsByClassName('problems')[0];
+
+        newProblem.style.transitionDelay='0s';
+        newProblem.style.opacity='0';
+        newProblem.style.visibility='hidden';
+        problems.style.transitionDelay='0.5s';
+        problems.style.margin='0 25%';
     };
 
     render() {
         return (
             <div className="new-problem">
                 <form>
-                    <select onChange={this.setSubject}>
+                    <select className='subject-select' onChange={this.setSubject}>
                         <option selected disabled hidden>select a subject</option>
                         <option>placeholder1</option>
                         <option>placeholder2</option>
@@ -42,8 +51,8 @@ export class NewProblem extends Component {
                         <option>placeholder5</option>
                         <option>add new subject</option>
                     </select>
-                    <input type="text" onChange={this.setDescription}/>
-                    <button type="button" onClick={this.sendProblem}>Add</button>
+                    <textarea  className='description-textarea' onChange={this.setDescription}/>
+                    <button className='add-button' type="button" onClick={this.sendProblem}>Ask</button>
                 </form>
             </div>
         );

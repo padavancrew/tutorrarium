@@ -9,6 +9,17 @@ class Help extends Component {
         //fetch
     }
 
+    newButtonClick = () => {
+        const newProblem = document.getElementsByClassName('new-problem')[0];
+        const problems = document.getElementsByClassName('problems')[0];
+
+        problems.style.transitionDelay='0s';
+        problems.style.margin='0 0 0 50%';
+        newProblem.style.transitionDelay='0.5s';
+        newProblem.style.visibility='visible';
+        newProblem.style.opacity='1';
+    };
+
     render() {
         const problems = this.props.problems.map((item) => {
             return (
@@ -19,6 +30,7 @@ class Help extends Component {
         return (
             <div className="help">
                 <div className="sort-field">
+                    <button type="button" onClick={this.newButtonClick}>New</button>
                     (sort, search)
                 </div>
                 <NewProblem />
@@ -35,7 +47,9 @@ Help.propTypes = {
 };
 
 const mapStateToProps = ({ problems }) => {
-    return { problems };
+    return {
+        problems
+    };
 };
 
 export default connect(mapStateToProps)(Help);

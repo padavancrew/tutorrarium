@@ -1,3 +1,47 @@
 .new-problem {
-  background-color: aqua;
+  overflow: hidden;
+  position: absolute;
+  height: 400px;
+  width: 50%;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s, visibility 0.5s;
+}
+
+.subject-select {
+  float: left;
+  margin: 50px 0 0 9%;
+  border-radius: 5px;
+  font-family: Slabo, sans-serif;
+  font-size: 18px;
+  outline: none;
+}
+
+.description-textarea {
+  float: left;
+  clear: both;
+  margin: 10px 0 0 8%;
+  padding: 10px 10px 25px 10px;
+  border-radius: 15px;
+  height: 200px;
+  width: 80%;
+  font-family: Slabo, sans-serif;
+  font-size: 16px;
+  resize: none;
+  outline: none;
+}
+
+
+.add-button {
+  float: right;
+  clear: both;
+  margin: 10px 11% 0 0;
+  padding: 7px 10px 5px 10px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  font-family: Slabo, sans-serif;
+  font-size: 25px;
+  background-color: green;
+  color: white;
 }
