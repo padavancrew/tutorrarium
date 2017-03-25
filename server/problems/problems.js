@@ -1,18 +1,30 @@
 import {Router} from 'express';
-import { problems } from './mock';
-import bodyParser from 'body-parser';
+import mongoose from 'mongoose';
+import problemSchema from './problemsSchema';
 
 const router = Router();
-
-router.use(bodyParser.json());
+const problemModel = mongoose.model('problem', problemSchema);
 
 router.get('/', (req, res) => {
-    res.json(problems);
+    problemModel.find((err, result) => {
+        if (err) return res.json(err);
+        res.json(result);
+    });
 });
 
 router.post('/', (req, res) => {
-    console.log('posted: ', req.body);
-    res.send('posted');
+    const problem = new problemModel(req.body);
+    problem.save((err, result) => {
+        if (err) return res.json(err);
+        res.json(result);
+    });
+});
+
+router.put('/:id', (req, res) => {
+    problemModel.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, result) => {
+        if (err) return res.json(err);
+        res.json(result);
+    });
 });
 
 export default router;
