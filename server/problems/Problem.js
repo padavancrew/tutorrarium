@@ -1,6 +1,6 @@
-import {Schema} from 'mongoose';
+import mongoose, {Schema} from 'mongoose';
 
-export default new Schema({
+const problemSchema = new Schema({
     creationDate: Date,
     subject: String,
     description: String,
@@ -8,3 +8,5 @@ export default new Schema({
     answersCount: Number,
     isAnswered: Boolean
 });
+
+export default mongoose.model('problem', problemSchema);

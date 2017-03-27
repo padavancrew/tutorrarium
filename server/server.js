@@ -3,7 +3,7 @@ import Express from 'express';
 import bodyParser from 'body-parser';
 import fallback from 'express-history-api-fallback';
 import mongoose from 'mongoose';
-import problemsRouter from './problems/problems';
+import problemsRouter from './problems';
 
 const app = new Express();
 const port = process.env.PORT || 3000;
