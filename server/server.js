@@ -1,21 +1,20 @@
 import path from 'path';
 import Express from 'express';
+import bodyParser from 'body-parser';
 import fallback from 'express-history-api-fallback';
 import mongoose from 'mongoose';
-import problemsRouter from './problems/problems';
-
-mongoose.connect('mongodb://root:padavancrew1@ds163699.mlab.com:63699/tutorrarium');
-const Schema = mongoose.Schema;
-const problemSchema = new Schema({
-    id: Number // TODO: add properties
-});
-const Problem = mongoose.model('User', problemSchema);
+import problemsRouter from './problems';
 
 const app = new Express();
 const port = process.env.PORT || 3000;
 const root = path.resolve(__dirname, '..', 'dist');
 
+mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://root:padavancrew1@ds163699.mlab.com:63699/tutorrarium');
+
+app.use(bodyParser.json());
 app.use('/api/problems', problemsRouter);
+
 app.use(Express.static(root, {maxAge: '2d'}));
 app.use(fallback('index.html', {root}));
 
