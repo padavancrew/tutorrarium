@@ -1,29 +1,43 @@
 import React, { Component, PropTypes } from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import { connect } from 'react-redux';
 import { NewProblem } from '../NewProblem/NewProblem';
 import { Problem } from './../Problem/Problem';
 import './Help.scss';
 
 class Help extends Component {
+    state = {
+        isNewProblemVisible: false
+    };
+
     componentDidMound() {
         //fetch
     }
 
     newButtonClick = () => {
-        const newProblem = document.getElementsByClassName('new-problem')[0];
-        const problems = document.getElementsByClassName('problems')[0];
+        this.setState({
+            isNewProblemVisible: true
+        });
+    };
 
-        problems.style.transitionDelay='0s';
-        problems.style.margin='0 0 0 50%';
-        newProblem.style.transitionDelay='0.5s';
-        newProblem.style.visibility='visible';
-        newProblem.style.opacity='1';
+    addButtonClick = (problem) => {
+        fetch('/api/problems', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(problem)
+        });
+        this.setState({
+            isNewProblemVisible: false
+        });
     };
 
     render() {
+        const { isNewProblemVisible } = this.state;
         const problems = this.props.problems.map((item) => {
             return (
-                <Problem problem={item}/>
+                <Problem problem={item} key={item.id}/>
             );
         });
 
@@ -33,10 +47,16 @@ class Help extends Component {
                     <button type="button" onClick={this.newButtonClick}>New</button>
                     (sort, search)
                 </div>
-                <NewProblem />
-                <div className="problems">
-                    {problems}
-                </div>
+                <ReactCSSTransitionGroup
+                    className="problems-container"
+                    transitionName="new-problem"
+                    transitionEnterTimeout={500}
+                    transitionLeaveTimeout={500}>
+                    {isNewProblemVisible ? <NewProblem addButtonClick={this.addButtonClick}/> : null}
+                    <div className="problems">
+                        {problems}
+                    </div>
+                </ReactCSSTransitionGroup>
             </div>
         );
     }

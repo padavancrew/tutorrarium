@@ -1,7 +1,7 @@
 .problem {
   overflow: hidden;
   margin: 0 auto 100px auto;
-  width: 625px;
+  width: 75%;
   font-family: Slabo, sans-serif;
 }
 
@@ -19,19 +19,18 @@
 .user-name {
   float: left;
   margin-top: 6px;
-  padding: 5px 0 0 5px;
+  padding: 5px 5px 0 5px;
+  border-radius: 0 5px 5px 0;
   height: 25px;
-  width: 400px;
   background: rgba(200, 200, 200, 1);
   font-size: 16px;
 }
 
 .subject {
-  float: left;
+  float: right;
   margin-top: 3px;
-  padding: 5px 15px 5px 15px;
+  padding: 7px 15px 7px 15px;
   border-radius: 5px;
-  width: auto;
   background: rgba(77, 0, 0, 1);
   font-size: 20px;
   color: white;
@@ -48,7 +47,7 @@
   margin-left: 10px;
   padding: 10px 0 25px 10px;
   border-radius: 15px;
-  width: 500px;
+  width: 95%;
   background-color: white;
   font-size: 16px;
 }
@@ -87,8 +86,7 @@
 }
 
 .view-button {
-  float: left;
-  margin-left: 310px;
+  float: right;
   padding: 7px 5px 5px 10px;
   border-radius: 5px;
   background: rgba(200, 0, 0, 1);

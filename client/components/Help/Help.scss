@@ -8,9 +8,11 @@
   height: 50px;
 }
 
+.problems-container {
+  display: flex;
+  justify-content: center;
+}
+
 .problems {
-  margin: 0 25%;
-  padding: 25px;
   width: 50%;
-  transition: margin-left 0.5s;
 }
