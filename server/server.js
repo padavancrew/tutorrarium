@@ -14,9 +14,12 @@ mongoose.connect('mongodb://root:padavancrew1@ds163699.mlab.com:63699/tutorrariu
 
 app.use(bodyParser.json());
 app.use('/api/problems', problemsRouter);
-
-app.use(Express.static(root, {maxAge: '2d'}));
-app.use(fallback('index.html', {root}));
+app.use(Express.static(root, {
+    maxAge: '2d'
+}));
+app.use(fallback('index.html', {
+    root
+}));
 
 app.listen(port, (error) => {
     if (error) {

@@ -1,3 +1,70 @@
 .new-problem {
-  background-color: aqua;
+  overflow: hidden;
+  height: 400px;
+  width: 50%;
+}
+
+.new-problem-enter {
+  opacity: 0;
+  flex: 0;
+}
+
+.new-problem-enter.new-problem-enter-active {
+  opacity: 1;
+  flex: 1;
+  transition: flex 0.25s ease-in-out, opacity 0.25s 0.25s linear;
+}
+
+.new-problem-leave {
+  opacity: 1;
+  flex: 1;
+}
+
+.new-problem-leave.new-problem-leave-active {
+  opacity: 0;
+  flex: 0;
+  transition: opacity 0.25s linear, flex 0.25s 0.25s ease-in-out;
+}
+
+.new-problem-form {
+  margin: auto;
+  width: 75%;
+
+}
+
+.subject-select {
+  float: left;
+  margin: 50px 0 0 5px;
+  border-radius: 5px;
+  font-family: Slabo, sans-serif;
+  font-size: 18px;
+  outline: none;
+}
+
+.description-textarea {
+  float: left;
+  clear: both;
+  margin: 10px 0 0 0;
+  padding: 10px 0 25px 10px;
+  border-radius: 15px;
+  height: 200px;
+  width: 100%;
+  font-family: Slabo, sans-serif;
+  font-size: 16px;
+  resize: none;
+  outline: none;
+}
+
+.add-button {
+  float: right;
+  clear: both;
+  margin: 10px 0 0 0;
+  padding: 7px 10px 5px 10px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  font-family: Slabo, sans-serif;
+  font-size: 25px;
+  background-color: green;
+  color: white;
 }

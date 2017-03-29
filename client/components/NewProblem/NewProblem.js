@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import './NewProblem.scss';
 
 export class NewProblem extends Component {
@@ -19,21 +19,12 @@ export class NewProblem extends Component {
         });
     };
 
-    sendProblem = () => {
-        fetch('/api/problems', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(this.state)
-        });
-    };
-
     render() {
+        const { addButtonClick } = this.props;
         return (
             <div className="new-problem">
-                <form>
-                    <select onChange={this.setSubject}>
+                <form className="new-problem-form">
+                    <select className='subject-select' onChange={this.setSubject}>
                         <option selected disabled hidden>select a subject</option>
                         <option>placeholder1</option>
                         <option>placeholder2</option>
@@ -42,10 +33,15 @@ export class NewProblem extends Component {
                         <option>placeholder5</option>
                         <option>add new subject</option>
                     </select>
-                    <input type="text" onChange={this.setDescription}/>
-                    <button type="button" onClick={this.sendProblem}>Add</button>
+                    <textarea className='description-textarea' onChange={this.setDescription}/>
+                    <button className='add-button' type="button" onClick={() => addButtonClick(this.state)}>Ask
+                    </button>
                 </form>
             </div>
         );
     }
 }
+
+NewProblem.propTypes = {
+    addButtonClick: PropTypes.func.isRequired
+};
