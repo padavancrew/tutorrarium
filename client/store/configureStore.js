@@ -1,8 +1,11 @@
-import { createStore, compose } from 'redux';
-import { rootReducer } from '../reducers';
+import { applyMiddleware, createStore, compose } from 'redux';
+import { rootReducer } from '../reducers/index';
 import { DevTools } from '../containers/DevTools';
+import thunk from 'redux-thunk';
 
+const middleware = applyMiddleware(thunk);
 const enhancer = compose(
+    middleware,
     DevTools.instrument()
 );
 
@@ -11,7 +14,7 @@ export const configureStore = (initialState) => {
 
     if (module.hot) {
         module.hot.accept('../reducers', () => {
-            const { rootReducer } = require('../reducers');
+            const { rootReducer } = require('../reducers/index');
             store.replaceReducer(rootReducer);
         });
     }

@@ -1,1 +1,2 @@
+export const GET_PROBLEMS_RECEIVE = 'GET_PROBLEMS_RECEIVE';
 export const ADD_PROBLEM = 'ADD_PROBLEM';

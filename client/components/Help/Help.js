@@ -3,6 +3,7 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import { connect } from 'react-redux';
 import { NewProblem } from '../NewProblem/NewProblem';
 import { Problem } from './../Problem/Problem';
+import { getProblems } from '../../actions/actions';
 import './Help.scss';
 
 class Help extends Component {
@@ -10,8 +11,8 @@ class Help extends Component {
         isNewProblemVisible: false
     };
 
-    componentDidMound() {
-        //fetch
+    componentDidMount() {
+        this.props.dispatch(getProblems());
     }
 
     newButtonClick = () => {
@@ -37,7 +38,7 @@ class Help extends Component {
         const { isNewProblemVisible } = this.state;
         const problems = this.props.problems.map((item) => {
             return (
-                <Problem problem={item} key={item.id}/>
+                <Problem problem={item} key={item._id}/>
             );
         });
 
@@ -63,7 +64,8 @@ class Help extends Component {
 }
 
 Help.propTypes = {
-    problems: PropTypes.array.isRequired
+    problems: PropTypes.array.isRequired,
+    dispatch: PropTypes.func.isRequired
 };
 
 const mapStateToProps = ({ problems }) => {
