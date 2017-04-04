@@ -3,8 +3,7 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import { connect } from 'react-redux';
 import { NewProblem } from '../NewProblem/NewProblem';
 import { Problem } from './../Problem/Problem';
-import { getProblems } from '../../actions/actions';
-import { addProblem } from '../../actions/actions';
+import { getProblems, addProblem } from '../../actions/actions';
 import './Help.scss';
 
 class Help extends Component {
