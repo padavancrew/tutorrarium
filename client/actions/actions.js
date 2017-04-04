@@ -3,7 +3,7 @@ import * as types from '../constants/ActionTypes';
 export const getProblemsReceive = (problems) => {
     return {
         type: types.GET_PROBLEMS_RECEIVE,
-        problems: problems
+        problems
     };
 };
 
@@ -16,7 +16,7 @@ export const getProblems = () => (dispatch) => {
 export const addProblemAdded = (problem) => {
     return {
         type: types.ADD_PROBLEM_ADDED,
-        problem: problem
+        problem
     };
 };
 
