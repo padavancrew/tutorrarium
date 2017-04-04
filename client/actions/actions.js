@@ -13,9 +13,20 @@ export const getProblems = () => (dispatch) => {
         .then((problems) => dispatch(getProblemsReceive(problems)));
 };
 
-export const addProblem = (problem) => {
+export const addProblemAdded = (problem) => {
     return {
-        type: types.ADD_PROBLEM,
-        problem
+        type: types.ADD_PROBLEM_ADDED,
+        problem: problem
     };
+};
+
+export const addProblem = (problem) => (dispatch) => {
+    fetch('/api/problems', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(problem)
+    })
+    .then(() => dispatch(addProblemAdded(problem)));
 };

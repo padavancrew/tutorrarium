@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { NewProblem } from '../NewProblem/NewProblem';
 import { Problem } from './../Problem/Problem';
 import { getProblems } from '../../actions/actions';
+import { addProblem } from '../../actions/actions';
 import './Help.scss';
 
 class Help extends Component {
@@ -22,13 +23,7 @@ class Help extends Component {
     };
 
     addButtonClick = (problem) => {
-        fetch('/api/problems', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(problem)
-        });
+        this.props.dispatch(addProblem(problem));
         this.setState({
             isNewProblemVisible: false
         });
