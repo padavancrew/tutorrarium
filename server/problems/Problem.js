@@ -2,6 +2,7 @@ import mongoose, {Schema} from 'mongoose';
 
 const problemSchema = new Schema({
     creationDate: Date,
+    userName: String,
     subject: String,
     description: String,
     rating: Number,

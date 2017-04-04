@@ -24,7 +24,7 @@ export class NewProblem extends Component {
         return (
             <div className="new-problem">
                 <form className="new-problem-form">
-                    <select className='subject-select' onChange={this.setSubject}>
+                    <select className="subject-select" onChange={this.setSubject}>
                         <option selected disabled hidden>select a subject</option>
                         <option>placeholder1</option>
                         <option>placeholder2</option>
@@ -33,8 +33,8 @@ export class NewProblem extends Component {
                         <option>placeholder5</option>
                         <option>add new subject</option>
                     </select>
-                    <textarea className='description-textarea' onChange={this.setDescription}/>
-                    <button className='add-button' type="button" onClick={() => addButtonClick(this.state)}>Ask
+                    <textarea className="description-textarea" onChange={this.setDescription}/>
+                    <button className="add-button" type="button" onClick={() => addButtonClick(this.state)}>Ask
                     </button>
                 </form>
             </div>

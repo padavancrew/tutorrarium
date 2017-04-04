@@ -1,6 +1,6 @@
 .problem {
   overflow: hidden;
-  margin: 0 auto 100px auto;
+  margin: 0 auto 100px;
   width: 75%;
   font-family: Slabo, sans-serif;
 }
@@ -19,7 +19,7 @@
 .user-name {
   float: left;
   margin-top: 6px;
-  padding: 5px 5px 0 5px;
+  padding: 5px 5px 0;
   border-radius: 0 5px 5px 0;
   height: 25px;
   background: rgba(200, 200, 200, 1);
@@ -29,7 +29,7 @@
 .subject {
   float: right;
   margin-top: 3px;
-  padding: 7px 15px 7px 15px;
+  padding: 7px 15px;
   border-radius: 5px;
   background: rgba(77, 0, 0, 1);
   font-size: 20px;
