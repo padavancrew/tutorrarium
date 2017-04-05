@@ -4,6 +4,7 @@ import bodyParser from 'body-parser';
 import fallback from 'express-history-api-fallback';
 import mongoose from 'mongoose';
 import problemsRouter from './problems';
+import answersRouter from './answers';
 
 const app = new Express();
 const port = process.env.PORT || 3000;
@@ -14,6 +15,7 @@ mongoose.connect('mongodb://root:padavancrew1@ds163699.mlab.com:63699/tutorrariu
 
 app.use(bodyParser.json());
 app.use('/api/problems', problemsRouter);
+app.use('api/answers', answersRouter);
 app.use(Express.static(root, {
     maxAge: '2d'
 }));
