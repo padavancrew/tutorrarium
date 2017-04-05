@@ -13,6 +13,28 @@
   justify-content: center;
 }
 
+.problems-container-enter {
+  opacity: 0;
+  flex: 0;
+}
+
+.problems-container-enter.problems-container-enter-active {
+  opacity: 1;
+  flex: 1;
+  transition: flex 250ms linear, opacity 250ms 250ms linear;
+}
+
+.problems-container-leave {
+  opacity: 1;
+  flex: 1;
+}
+
+.problems-container-leave.problems-container-leave-active {
+  opacity: 0;
+  flex: 0;
+  transition: opacity 250ms linear, flex 250ms 250ms linear;
+}
+
 .problems {
   width: 50%;
 }

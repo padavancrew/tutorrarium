@@ -21,6 +21,7 @@ export class NewProblem extends Component {
 
     render() {
         const { addButtonClick } = this.props;
+
         return (
             <div className="new-problem">
                 <form className="new-problem-form">
@@ -34,7 +35,8 @@ export class NewProblem extends Component {
                         <option>add new subject</option>
                     </select>
                     <textarea className="description-textarea" onChange={this.setDescription}/>
-                    <button className="add-button" type="button" onClick={() => addButtonClick(this.state)}>Ask
+                    <button className="add-button" type="button" onClick={() => addButtonClick(this.state)}>
+                        Ask
                     </button>
                 </form>
             </div>

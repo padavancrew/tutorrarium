@@ -4,6 +4,7 @@ import './Problem.scss';
 export class Problem extends Component {
     render() {
         const problem = this.props.problem;
+        const { viewButtonClick } = this.props;
         const isAnswered = (
             problem.isAnswered ?
                 ( <i className="fa fa-check-circle-o answered"/> ) :
@@ -32,7 +33,7 @@ export class Problem extends Component {
                 <div className="answers">
                     <span>{problem.answersCount} answers</span>
                 </div>
-                <div className="view-button">
+                <div className="view-button" onClick={() => viewButtonClick()}>
                     <span>View</span>
                     <i className="fa fa-chevron-right"/>
                 </div>
@@ -42,5 +43,6 @@ export class Problem extends Component {
 }
 
 Problem.propTypes = {
-    problem: PropTypes.object.isRequired
+    problem: PropTypes.object.isRequired,
+    viewButtonClick: PropTypes.func.isRequired
 };
