@@ -12,7 +12,7 @@ class Help extends Component {
     };
 
     componentDidMount() {
-        this.props.dispatch(getProblems());
+        this.props.getProblems();
     }
 
     newButtonClick = () => {
@@ -22,7 +22,7 @@ class Help extends Component {
     };
 
     addButtonClick = (problem) => {
-        this.props.dispatch(addProblem(problem));
+        this.props.addProblem(problem);
         this.setState({
             isNewProblemVisible: false
         });
@@ -59,7 +59,8 @@ class Help extends Component {
 
 Help.propTypes = {
     problems: PropTypes.array.isRequired,
-    dispatch: PropTypes.func.isRequired
+    getProblems: PropTypes.func.isRequired,
+    addProblem: PropTypes.func.isRequired
 };
 
 const mapStateToProps = ({ problems }) => {
@@ -68,4 +69,15 @@ const mapStateToProps = ({ problems }) => {
     };
 };
 
-export default connect(mapStateToProps)(Help);
+const mapDispatchToProps = ( dispatch ) => {
+    return {
+        getProblems: () => {
+            dispatch(getProblems());
+        },
+        addProblem: (problem) => {
+            dispatch(addProblem(problem));
+        }
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Help);
