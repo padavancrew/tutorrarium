@@ -4,28 +4,6 @@
   width: 50%;
 }
 
-.new-problem-enter {
-  opacity: 0;
-  flex: 0;
-}
-
-.new-problem-enter.new-problem-enter-active {
-  opacity: 1;
-  flex: 1;
-  transition: flex 0.25s ease-in-out, opacity 0.25s 0.25s linear;
-}
-
-.new-problem-leave {
-  opacity: 1;
-  flex: 1;
-}
-
-.new-problem-leave.new-problem-leave-active {
-  opacity: 0;
-  flex: 0;
-  transition: opacity 0.25s linear, flex 0.25s 0.25s ease-in-out;
-}
-
 .new-problem-form {
   margin: auto;
   width: 75%;
