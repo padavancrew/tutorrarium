@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { NewProblem } from '../NewProblem/NewProblem';
 import { Problem } from '../Problem/Problem';
 import { AnswersList } from '../AnswersList/AnswersList';
-import { getProblems, addProblem } from '../../actions/actions';
+import { getProblems, addProblem, showCurrentProblem } from '../../actions/actions';
 import './Help.scss';
 
 class Help extends Component {
@@ -37,7 +37,8 @@ class Help extends Component {
         });
     };
 
-    viewButtonClick = () => {
+    viewButtonClick = (currentProblem) => {
+        this.props.showCurrentProblem(currentProblem);
         if (this.state.isNewProblemVisible) {
             this.setState({
                 isNewProblemVisible: false
@@ -65,8 +66,8 @@ class Help extends Component {
     }
 
     render() {
-        const { isNewProblemVisible } = this.state;
-        const { isAnswersListVisible } = this.state;
+        const { isNewProblemVisible, isAnswersListVisible } = this.state;
+        const { currentProblem } = this.props;
         const problems = this.props.problems.map((item) => {
             return (
                 <Problem problem={item} viewButtonClick={this.viewButtonClick} key={item._id}/>
@@ -88,7 +89,8 @@ class Help extends Component {
                     <div className="problems">
                         {problems}
                     </div>
-                    {isAnswersListVisible ? <AnswersList hideButtonClick={this.hideButtonClick}/> : null}
+                    {isAnswersListVisible ?
+                        <AnswersList currentProblem={currentProblem} hideButtonClick={this.hideButtonClick}/> : null}
                 </ReactCSSTransitionGroup>
             </div>
         );
@@ -97,25 +99,21 @@ class Help extends Component {
 
 Help.propTypes = {
     problems: PropTypes.array.isRequired,
+    currentProblem: PropTypes.object.isRequired,
     getProblems: PropTypes.func.isRequired,
-    addProblem: PropTypes.func.isRequired
+    addProblem: PropTypes.func.isRequired,
+    showCurrentProblem: PropTypes.func.isRequired
 };
 
-const mapStateToProps = ({ problems }) => {
+const mapStateToProps = ({ problems, currentProblem }) => {
     return {
-        problems
+        problems,
+        currentProblem
     };
 };
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        getProblems: () => {
-            dispatch(getProblems());
-        },
-        addProblem: (problem) => {
-            dispatch(addProblem(problem));
-        }
-    };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Help);
+export default connect(mapStateToProps, {
+    getProblems,
+    addProblem,
+    showCurrentProblem
+})(Help);

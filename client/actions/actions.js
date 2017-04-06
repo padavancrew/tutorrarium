@@ -30,3 +30,10 @@ export const addProblem = (problem) => (dispatch) => {
     })
     .then(() => dispatch(addProblemAdded(problem)));
 };
+
+export const showCurrentProblem = (currentProblem) => {
+    return {
+        type: types.SHOW_CURRENT_PROBLEM,
+        currentProblem
+    };
+};

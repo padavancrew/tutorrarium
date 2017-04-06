@@ -3,8 +3,7 @@ import './Problem.scss';
 
 export class Problem extends Component {
     render() {
-        const problem = this.props.problem;
-        const { viewButtonClick } = this.props;
+        const { problem, viewButtonClick } = this.props;
         const isAnswered = (
             problem.isAnswered ?
                 ( <i className="fa fa-check-circle-o answered"/> ) :
@@ -33,7 +32,7 @@ export class Problem extends Component {
                 <div className="answers">
                     <span>{problem.answersCount} answers</span>
                 </div>
-                <div className="view-button" onClick={() => viewButtonClick()}>
+                <div className="view-button" onClick={() => viewButtonClick(problem)}>
                     <span>View</span>
                     <i className="fa fa-chevron-right"/>
                 </div>
